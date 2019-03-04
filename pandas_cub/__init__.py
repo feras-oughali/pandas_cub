@@ -43,7 +43,12 @@ class DataFrame:
         
 
     def _check_array_lengths(self, data):
-        pass
+        for i, val in enumerate(data.values()):
+            if i==0:
+                length = len(val)
+            elif length != len(val):
+                raise ValueError('lenght of values in `data` must be equal')
+
 
     def _convert_unicode_to_object(self, data):
         new_data = {}
