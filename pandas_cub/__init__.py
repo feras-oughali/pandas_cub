@@ -67,7 +67,7 @@ class DataFrame:
         -------
         int: the number of rows in the dataframe
         """
-        pass
+        return len(next(iter(self._data.values())))
 
     @property
     def columns(self):
@@ -80,7 +80,7 @@ class DataFrame:
         -------
         list of column names
         """
-        pass
+        return list(self._data) #this will retrun the a list of keys only!
 
     @columns.setter
     def columns(self, columns):
@@ -96,7 +96,17 @@ class DataFrame:
         -------
         None
         """
-        pass
+        if not isinstance(columns, list):
+            raise TypeError('A list is expected')
+        if len(columns) != len(self._data):
+            raise ValueError('length of `columns` must equals to Dataframe\'s columns')
+        for col in columns:
+            if not isinstance(col, str):
+                raise TypeError('all column names must be strings')
+        if len(columns) != len(set(columns)):
+            raise ValueError('list of `columns` must have no duplicates')
+        self._data = dict(zip(columns, self._data.values()))
+        
 
     @property
     def shape(self):
