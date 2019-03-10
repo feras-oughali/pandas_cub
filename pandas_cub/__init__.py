@@ -249,6 +249,14 @@ class DataFrame:
             return DataFrame({item:self._data[item]})
         if isinstance(item, list):\
             return DataFrame({i:self._data[i] for i in item})
+        if isinstance(item, DataFrame):
+            if len(item.columns) != 1: raise ValueError('DataFrame must have one col only')
+            arr = next(iter(list(item.values())))
+            if arr.dtype.kind !='b': raise TypeError('DataFrame must be of bool type')
+            cols = list(self._data.keys())
+            data = list(self._data.values())
+            
+            return DataFrame({i:self._data[i][arr] for i in cols})
 
     def _getitem_tuple(self, item):
         # simultaneous selection of rows and cols -> df[rs, cs]
