@@ -246,7 +246,9 @@ class DataFrame:
         A subset of the original DataFrame
         """
         if isinstance(item, str):
-            return DataFrame({'item':self._data[item]})
+            return DataFrame({item:self._data[item]})
+        if isinstance(item, list):\
+            return DataFrame({i:self._data[i] for i in item})
 
     def _getitem_tuple(self, item):
         # simultaneous selection of rows and cols -> df[rs, cs]
