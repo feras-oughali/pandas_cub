@@ -412,7 +412,14 @@ class DataFrame:
         -------
         A list of one-column DataFrames
         """
-        pass
+        dfs = []
+        for key, val in self._data.items():
+            new_data = {}
+            new_data[key] = np.unique(val)
+            dfs.append(DataFrame(new_data))
+        if len(dfs)==1:
+            return dfs[0]
+        return dfs
 
     def nunique(self):
         """
@@ -422,7 +429,10 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        new_data = {}
+        for key, val in self._data.items():
+            new_data[key]=np.array([len(np.unique(val))])
+        return DataFrame(new_data)
 
     def value_counts(self, normalize=False):
         """
