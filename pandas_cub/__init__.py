@@ -267,7 +267,28 @@ class DataFrame:
 
     def __setitem__(self, key, value):
         # adds a new column or a overwrites an old column
-        pass
+        if not isinstance(key, str):
+            raise NotImplementedError('DataFrame can set only one column at a time')
+        if isinstance(value, np.ndarray):
+            if value.ndim != 1:
+                raise ValueError('Array must be 1-D numpy array')
+            if value.shape[0] != self.shape[0]:
+                raise ValueError('Length of array is not matching length of DataFrame')
+        elif isinstance(value, DataFrame):
+            if self.shape[1] != 1:
+                raise ValueError('New values must be a single column DataFrame')
+            if len(value) != len(self):
+                raise ValueError('Length of new values is not matching length of DataFrame')
+            value = next(iter(self._data.values()))
+        elif isinstance(value, (int, bool, str, float)):
+            value = np.repeat(value, len(self))
+        else: 
+            raise TypeError('Provided new value is not valid')
+        
+        if value.dtype.kind == 'U':
+            value = value.astype('object')
+        
+        self._data[key] = value
 
     def head(self, n=5):
         """
