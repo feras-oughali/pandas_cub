@@ -382,7 +382,13 @@ class DataFrame:
         -------
         A DataFrame of booleans the same size as the calling DataFrame
         """
-        pass
+        new_data = {}
+        for key, val in self._data.items():
+            if val.dtype.kind=='O':
+                new_data[key] = val==None
+            else:
+                new_data[key] = np.isnan(val)
+        return DataFrame(new_data)
 
     def count(self):
         """
