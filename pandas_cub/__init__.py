@@ -398,7 +398,11 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        new_data = {}
+        na_count = self.isna().sum()
+        for key, val in na_count._data.items():
+            new_data[key]= len(self)-val
+        return DataFrame(new_data)
 
     def unique(self):
         """
