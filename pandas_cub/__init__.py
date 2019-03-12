@@ -366,7 +366,13 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        new_data = {}
+        for col, val in self._data.items():
+            try: 
+                new_data[col]= np.array([aggfunc(val)])
+            except TypeError:
+                pass
+        return DataFrame(new_data)
 
     def isna(self):
         """
