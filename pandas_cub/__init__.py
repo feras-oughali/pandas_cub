@@ -302,7 +302,7 @@ class DataFrame:
         -------
         DataFrame
         """
-        pass
+        return DataFrame({key:val[:n] for key, val in self._data.items()})
 
     def tail(self, n=5):
         """
@@ -316,7 +316,7 @@ class DataFrame:
         -------
         DataFrame
         """
-        pass
+        return DataFrame({key:val[-n:] for key, val in self._data.items()})
 
     #### Aggregation Methods ####
 
