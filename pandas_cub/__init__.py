@@ -495,7 +495,16 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        if isinstance(columns, str):
+            columns = [columns]
+        elif not isinstance(columns, list):
+            raise TypeError('columns must be a `str` or a `list`')
+        new_data = {}
+        for key, val in self._data.items():
+            if not key in columns:
+                new_data[key]=val
+        return DataFrame(new_data)
+
 
     #### Non-Aggregation Methods ####
 
