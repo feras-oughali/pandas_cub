@@ -447,7 +447,18 @@ class DataFrame:
         -------
         A list of DataFrames or a single DataFrame if one column
         """
-        pass
+        dfs = []
+        for key, val in self._data.items():
+            uniques, counts = np.unique(val, return_counts=True)
+            order = np.argsort(-counts)
+            uniques = uniques[order]
+            counts = counts[order]
+            dfs.append(DataFrame({key:uniques, 'count':counts}))
+        if len(dfs)==1:
+            return dfs[0]
+        return dfs
+
+        
 
     def rename(self, columns):
         """
