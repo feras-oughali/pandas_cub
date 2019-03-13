@@ -475,7 +475,13 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        if not isinstance(columns, dict):
+            raise TypeError('Columns must be a `dict`')
+        new_data = {}
+        for key, val in self._data.items():
+            new_col = columns.get(key, key)
+            new_data[new_col]=val
+        return DataFrame(new_data)
 
     def drop(self, columns):
         """
