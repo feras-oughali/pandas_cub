@@ -453,6 +453,8 @@ class DataFrame:
             order = np.argsort(-counts)
             uniques = uniques[order]
             counts = counts[order]
+            if normalize:
+                counts = counts/counts.sum()
             dfs.append(DataFrame({key:uniques, 'count':counts}))
         if len(dfs)==1:
             return dfs[0]
