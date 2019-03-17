@@ -643,8 +643,16 @@ class DataFrame:
         -------
         A DataFrame
         """
-        def func():
-            pass
+        def func(value):
+            value = value.astype('float')
+            shifted_value = np.roll(value, n)
+            value = (value - shifted_value) / shifted_value
+            if n>=0:
+                value[:n]=np.nan
+            else:
+                value[n:]=np.nan
+            return value
+
         return self._non_agg(func)
 
     #### Arithmetic and Comparison Operators ####
