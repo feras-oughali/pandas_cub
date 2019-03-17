@@ -618,8 +618,16 @@ class DataFrame:
         -------
         A DataFrame
         """
-        def func():
-            pass
+        def func(value):
+            value.astype('float')
+            shiifted_value = np.roll(value, n)
+            value = value - shiifted_value
+            if n>=0:
+                value[:n]=np.nan
+            else:
+                value[n:]=np.nan
+            return value
+
         return self._non_agg(func)
 
     def pct_change(self, n=1):
