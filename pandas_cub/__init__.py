@@ -597,7 +597,13 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        new_data = {}
+        for key, val in self._data.items():
+            if val.dtype.kind=='O':
+                new_data[key] = val.copy()
+            else:
+                new_data[key] = funcname(val, **kwargs)
+        return DataFrame(new_data)
 
     def diff(self, n=1):
         """
