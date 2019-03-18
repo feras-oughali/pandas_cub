@@ -18,6 +18,9 @@ This note highlights some concepts and tools that I have acquired and used throu
 
 ## Python
 
-* 
+* Reverse a list or np array
+```python 
+a[::-1]
+```
 
 

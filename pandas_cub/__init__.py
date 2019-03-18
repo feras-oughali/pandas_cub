@@ -770,7 +770,18 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        # if seed:
+        #     np.random.seed(seed)
+        # if frac:
+        #     if frac <= 0:
+        #         raise ValueError('`frac` must be positive')
+        #     else:
+        #         n = int(frac*len(self))
+        # if not isinstance(n, int):
+        #     raise ValueError('`n` must be an interger')
+        # rows = np.random.choice(range(len(self)), n, replace=replace)
+        # return self[rows.tolist()]
+
 
     def pivot_table(self, rows=None, columns=None, values=None, aggfunc=None):
         """
