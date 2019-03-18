@@ -724,7 +724,17 @@ class DataFrame:
         -------
         A DataFrame
         """
-        pass
+        if isinstance(other, DataFrame):
+            if other.shape[1]!=1:
+                raise ValueError('DataFrame must be a single column')
+            else:
+                other = next(iter(other._data.values()))
+        
+        new_data = {}
+        for key, val in self._data.items():
+            fnc = getattr(val, op)
+            new_data[key]=fnc(other)
+        return DataFrame(new_data)
 
     def sort_values(self, by, asc=True):
         """
