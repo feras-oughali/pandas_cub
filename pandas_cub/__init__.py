@@ -909,7 +909,17 @@ class StringMethods:
         return self._str_method(str.encode, col, encoding, errors)
 
     def _str_method(self, method, col, *args):
-        pass
+        new_vals = []
+        val = self._df._data[col]
+        if val.dtype.kind != 'O':
+            raise TypeError('`str` accessor can handle only strings')
+        for s in val:
+            if s is None:
+                new_vals.append(None)
+            else:
+                new_vals.append(method(val, *args)
+        return DataFrame({col:np.array(new_vals)})
+
 
 
 def read_csv(fn):
