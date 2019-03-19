@@ -915,9 +915,9 @@ class StringMethods:
             raise TypeError('`str` accessor can handle only strings')
         for s in val:
             if s is None:
-                new_vals.append(None)
+                new_vals.append(s)
             else:
-                new_vals.append(method(val, *args)
+                new_vals.append(method(s, *args))
         return DataFrame({col:np.array(new_vals)})
 
 
