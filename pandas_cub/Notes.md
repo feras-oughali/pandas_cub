@@ -7,14 +7,14 @@ This note highlights some concepts and tools that I have acquired and used throu
 * conda
 * git
 * jupyter
-* VS code
+* VS Code
 * ipython kernels
 
 ## Concepts 
 
 * Structure for building a library from scratch
-* Creating and using environments
-* Test-based development
+* Creating and using development environments
+* Test-Driven development
 
 ## Python
 
@@ -22,5 +22,11 @@ This note highlights some concepts and tools that I have acquired and used throu
 ```python 
 a[::-1]
 ```
+* Handling and raising errors
+* Creating and using private methods
+* Python data model and special methods 
+* Use the `isinstance` function
+* Use data type `array.dtype.kind` of numpy
+* Use python decorators
 
 
