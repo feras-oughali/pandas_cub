@@ -9,6 +9,7 @@ This note highlights some concepts and tools that I have acquired and used throu
 * jupyter
 * VS Code
 * ipython kernels
+* pytest
 
 ## Concepts 
 
