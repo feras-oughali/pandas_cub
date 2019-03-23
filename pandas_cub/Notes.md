@@ -29,5 +29,6 @@ a[::-1]
 * Use the `isinstance` function
 * Use data type `array.dtype.kind` of numpy
 * Use python decorators
+* 
 
 
