@@ -2,21 +2,30 @@
 
 This note highlights some concepts and tools that I have acquired and used throughout this project. 
 
-## Tools
+The project aims at replicating some of the functionalities of the famous `pandas` library. The size of the project and the concepts used within are prefect for those who are looking forward to enhance their development skills and tackle a project that is interesting, managable, and informative at the same time. 
 
-* conda
-* git
-* jupyter
-* VS Code
-* ipython kernels
-* pytest
+This project was developed by XXXX. You can refer to XXX for more details about the project.
 
+I added a flavour of `git` to the project to maximize the benefits. 
 
-## Concepts 
+## Concepts used in the project
 
 * Structure for building a library from scratch
 * Creating and using development environments
 * Test-Driven development
+
+
+## Tools and libraries used in the project
+
+* conda
+* jupyter
+* VS Code
+* ipython kernels
+* git
+* pytest
+* numpy
+
+
 
 ## Python
 
