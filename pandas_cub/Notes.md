@@ -8,7 +8,7 @@ This project was developed by XXXX. You can refer to XXX for more details about 
 
 I added a flavour of `git` to the project to maximize the benefits. 
 
-## Concepts used in the project
+## Concepts covered in the project
 
 * Structure for building a library from scratch
 * Creating and using development environments
@@ -26,16 +26,43 @@ I added a flavour of `git` to the project to maximize the benefits.
 * numpy
 
 
+## Takeaways from the project 
 
-## Python
+* Understand structure of building a library 
+* Handling and raising errors
+* Creating and using private methods
+* Use python decorators
+* OOP in Python
+* Python _data model_ and _special methods_
+* Use the `isinstance` function
+* Use the `getattr` function
+* Use `_repr_html_` ipython method to produce a represenation of objects in jupyter 
+* Use `_ipython_key_completions_` ipython method 
+* Use `zip`, `enumerate`, `iter`, `next`
+* Understand and use `*args` and `**kwargs`* 
+* Create a group of methods with the an `accessor` like _pandas_ `str`, `dt`, and `cat`
+* Automatically add documentation
+* Use a defaultdict
 
+
+### numpy
+* `ndim`
+* `repeat`
+* `unique`
+* `roll`
+* `isnan`
+* `argsort`
+* `lexsort`
+* `random.choice`
+* `array.dtype.kind`
+* `unicode` type array
 * Reverse a list or np array
 ```python 
 a[::-1]
 ```
-* Handling and raising errors
-* Creating and using private methods
-* Python _data model_ and _special methods_
+* 
+* 
+* 
     * `__len__`
     * `__doc__`
     * `__add__`
@@ -59,30 +86,7 @@ a[::-1]
 @columns.setter
     def columns(self, columns):
 ```
-* Use the `isinstance` function
-* Use the `getattr` function
-* Use data type `array.dtype.kind` of numpy
-* Use python decorators
-* Understand and handle numpy `unicode` type array
-* Use `zip`, `enumerate`, `iter`, `next`
-* OOP in Python
-* Use `_repr_html_` ipython method to produce a represenation of objects in jupyter 
-* Use `_ipython_key_completions_` ipython method 
-* `List` and `Dictionary` comprehension 
-* Understand and use `*args` and `**kwargs`
-* Automatically add documentation
-* Create a group of methods with the an `accessor` like _pandas_ `str`, `dt`, and `cat`
-* Use a defaultdict
 
-numpy
-* `ndim`
-* `repeat`
-* `unique`
-* `roll`
-* `isnan`
-* `argsort`
-* `lexsort`
-* `random.choice`
-* 
+
 
 
