@@ -1,10 +1,10 @@
 # Notes from pandas_cub project
 
-This note highlights some concepts and tools that I have acquired and used throughout this project. 
+This note highlights some concepts and tools that have been used throughout this project. 
 
-The project aims at replicating some of the functionalities of the famous `pandas` library. The size of the project and the concepts used within are prefect for those who are looking forward to enhance their development skills and tackle a project that is interesting, managable, and informative at the same time. 
+The project aims at replicating some of the functionalities of the famous `Pandas` library. The size of the project and the concepts used within are prefect for those who are looking forward to enhance their development skills and tackle a project that is interesting, managable, and informative at the same time. 
 
-This project was developed by XXXX. You can refer to XXX for more details about the project.
+This project was developed by Ted Petrou. You can refer to [this link](https://online.dunderdata.com/courses/build-a-data-analysis-library-from-scratch-in-python) for more details about the project.
 
 I added a flavour of `git` to the project to maximize the benefits. 
 
