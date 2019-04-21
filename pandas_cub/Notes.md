@@ -60,9 +60,9 @@ I added a flavour of `git` to the project to maximize the benefits.
 ```python 
 a[::-1]
 ```
-* 
-* 
-* 
+
+### python
+* Some of the Magic functions used in the project
     * `__len__`
     * `__doc__`
     * `__add__`
@@ -78,7 +78,7 @@ a[::-1]
     * `__getitem__`
     * `__setitem__`
     * `@property`
-    * `@columns.setter`
+    * `@property.setter`
 ```Python
 @property
     def columns(self):
